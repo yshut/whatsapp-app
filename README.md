@@ -8,6 +8,16 @@ Android 应用多实例实验项目，基于 BlackBox Reborn 的本地修改版�
 
 > **许可状态待核实：** 上游 README 与 LICENSE 的许可标注不一致，部分随附组件的来源与许可清单尚未补齐。公开源码、构建成功或“实验用途”说明均不代表已完成授权核验。详见 [许可与发布风险记录](docs/LEGAL_REVIEW.md)。
 
+## 下载安装包
+
+**[直接下载 0.3.3-test APK（ARM64，约 8.1 MB）](https://github.com/yshut/whatsapp-app/releases/download/v0.3.3-test/multi-space-0.3.3-test-arm64-v8a.apk)**
+
+[版本说明与全部附件](https://github.com/yshut/whatsapp-app/releases/tag/v0.3.3-test) · [SHA-256 校验文件](https://github.com/yshut/whatsapp-app/releases/download/v0.3.3-test/SHA256SUMS.txt)
+
+下载完成后在 Android 手机上打开 APK，按系统提示允许所用浏览器或文件管理器安装应用。需要 Android 9 及以上、ARM64；其他设备兼容性见下文。GitHub 的 Source code 压缩包是源码，不能直接安装。
+
+当前附件是原开发环境构建的测试版，使用调试签名。同签名旧版可尝试覆盖安装；若出现签名冲突，请先确认备份，卸载会清除本地空间数据。GitHub Actions 或其他电脑生成的调试包可能使用不同签名。发布附件不代表已完成许可或安全审查。
+
 ## 当前功能
 
 | 功能 | 当前实现与边界 |
