@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <!-- ActivityStack brings each virtual WhatsApp task to the foreground. -->
+ <uses-permission android:name="android.permission.REORDER_TASKS"/>
+ <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+ <queries><package android:name="com.whatsapp"/></queries>
+ <application android:name=".SpacesApplication" android:label="多开空间" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:usesCleartextTraffic="false" tools:replace="android:usesCleartextTraffic" android:icon="@drawable/app_mark">
+  <activity android:name=".NetworkSettingsActivity" android:exported="false"/>
+  <service android:name=".ResidentialService" android:process=":residential" android:exported="false" android:foregroundServiceType="dataSync"/>
+  <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  <service android:name=".SyncJob" android:exported="true" android:permission="android.permission.BIND_JOB_SERVICE"/>
+  <receiver android:name=".SourceChangedReceiver" android:exported="true"><intent-filter><action android:name="android.intent.action.PACKAGE_REPLACED"/><data android:scheme="package"/></intent-filter><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/></intent-filter></receiver>
+ </application>
+</manifest>
